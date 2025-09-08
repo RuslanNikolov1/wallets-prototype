@@ -55,6 +55,14 @@
   }
 }
 
+.sectionDivider {
+  height: 4px;
+  background: #00ff00;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
 
 @keyframes shamanicPattern {
   0% { transform: translate(0, 0) rotate(0deg); }

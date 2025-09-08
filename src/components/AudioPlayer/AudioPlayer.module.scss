@@ -1,3 +1,21 @@
+.audioControls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.musicLabel {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #d4af37;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  white-space: nowrap;
+  animation: pulse 2s ease-in-out infinite;
+}
+
 .playPauseButton {
   background: rgba(45, 85, 45, 0.2);
   border: 2px solid #d4af37;
@@ -22,6 +40,17 @@
   
   &:active {
     transform: scale(0.95);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.8;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7), 0 0 8px rgba(212, 175, 55, 0.6);
   }
 }
 
