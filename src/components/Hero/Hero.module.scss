@@ -1,0 +1,723 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Creepster&family=Griffy:wght@400&family=Butcherman&family=Nosifer&family=UnifrakturMaguntia&family=Germania+One&family=Creepy&family=Fredericka+the+Great&family=Chango&family=Kalam:wght@300;400;700&family=Oswald:wght@200;300;400;500;600;700&family=Creepster&family=Griffy&family=Chango&display=swap');
+
+.hero {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+    url('../../people.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.tribalBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.forestLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    // Subtle tribal overlay to complement the people image
+    linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.3) 100%),
+    // Forest canopy layers (more subtle)
+    linear-gradient(45deg, transparent, rgba(45, 85, 45, 0.15), transparent),
+    linear-gradient(-45deg, transparent, rgba(65, 105, 65, 0.1), transparent),
+    // Tree trunk shadows (subtle)
+    linear-gradient(90deg, transparent, rgba(20, 40, 20, 0.08), transparent);
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      // Tribal geometric patterns
+      repeating-linear-gradient(
+        15deg,
+        transparent,
+        transparent 30px,
+        rgba(34, 102, 34, 0.08) 30px,
+        rgba(34, 102, 34, 0.08) 60px
+      ),
+      repeating-linear-gradient(
+        -15deg,
+        transparent,
+        transparent 40px,
+        rgba(68, 136, 68, 0.06) 40px,
+        rgba(68, 136, 68, 0.06) 80px
+      ),
+      // Ancient tribal symbols pattern
+      radial-gradient(circle at 20% 30%, rgba(139, 115, 85, 0.1) 2px, transparent 2px),
+      radial-gradient(circle at 80% 70%, rgba(139, 115, 85, 0.08) 1.5px, transparent 1.5px),
+      radial-gradient(circle at 60% 20%, rgba(139, 115, 85, 0.12) 3px, transparent 3px),
+      radial-gradient(circle at 30% 80%, rgba(139, 115, 85, 0.06) 2px, transparent 2px);
+    background-size: 120px 120px, 100px 100px, 80px 80px, 60px 60px, 100px 100px, 70px 70px;
+    animation: forestWhisper 30s linear infinite;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      // Sacred geometry patterns
+      repeating-conic-gradient(
+        from 0deg at 25% 25%,
+        transparent 0deg,
+        rgba(139, 115, 85, 0.05) 30deg,
+        transparent 60deg,
+        rgba(139, 115, 85, 0.03) 90deg,
+        transparent 120deg
+      ),
+      repeating-conic-gradient(
+        from 45deg at 75% 75%,
+        transparent 0deg,
+        rgba(139, 115, 85, 0.04) 45deg,
+        transparent 90deg,
+        rgba(139, 115, 85, 0.06) 135deg,
+        transparent 180deg
+      );
+    background-size: 200px 200px, 150px 150px;
+    animation: tribalPattern 40s linear infinite;
+  }
+}
+
+.fireLayer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 35%;
+  background: transparent;
+}
+
+.spiritLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(45deg, transparent, rgba(200, 220, 180, 0.05), transparent),
+    linear-gradient(-45deg, transparent, rgba(180, 200, 160, 0.03), transparent);
+  animation: spiritDrift 20s ease-in-out infinite;
+}
+
+.shamanOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    // Ancient ritual patterns
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 100px,
+      rgba(139, 115, 85, 0.02) 100px,
+      rgba(139, 115, 85, 0.02) 200px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 80px,
+      rgba(200, 255, 200, 0.015) 80px,
+      rgba(200, 255, 200, 0.015) 160px
+    ),
+    // Tribal mandala patterns
+    radial-gradient(circle at 10% 10%, rgba(139, 115, 85, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 90% 90%, rgba(139, 115, 85, 0.06) 1.5px, transparent 1.5px),
+    radial-gradient(circle at 50% 50%, rgba(139, 115, 85, 0.04) 2px, transparent 2px);
+  background-size: 200px 200px, 160px 160px, 50px 50px, 60px 60px, 80px 80px;
+  animation: shamanRitual 30s linear infinite;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      // Sacred symbols overlay
+      repeating-conic-gradient(
+        from 0deg at 20% 20%,
+        transparent 0deg,
+        rgba(139, 115, 85, 0.03) 15deg,
+        transparent 30deg,
+        rgba(139, 115, 85, 0.02) 45deg,
+        transparent 60deg
+      ),
+      repeating-conic-gradient(
+        from 30deg at 80% 80%,
+        transparent 0deg,
+        rgba(139, 115, 85, 0.04) 20deg,
+        transparent 40deg,
+        rgba(139, 115, 85, 0.02) 60deg,
+        transparent 80deg
+      );
+    background-size: 120px 120px, 100px 100px;
+    animation: sacredSymbols 35s linear infinite;
+  }
+}
+
+.danceCircle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  border: 2px solid rgba(139, 115, 85, 0.3);
+  border-radius: 50%;
+  animation: danceCircle 20s linear infinite;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    border: 1px solid rgba(139, 115, 85, 0.2);
+    border-radius: 50%;
+    animation: danceCircle 15s linear infinite reverse;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgba(139, 115, 85, 0.4);
+    border-radius: 50%;
+    animation: danceCircle 10s linear infinite;
+  }
+}
+
+.oldSpirits {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(30deg, transparent, rgba(200, 220, 180, 0.03), transparent),
+    linear-gradient(-30deg, transparent, rgba(180, 200, 160, 0.02), transparent);
+  animation: oldSpiritsDrift 25s ease-in-out infinite;
+}
+
+// New forest layers
+.forestTrees {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: 
+    // Tree silhouettes using CSS shapes
+    radial-gradient(ellipse 80px 200px at 10% 100%, rgba(20, 40, 20, 0.8) 0%, transparent 70%),
+    radial-gradient(ellipse 60px 180px at 25% 100%, rgba(25, 45, 25, 0.7) 0%, transparent 70%),
+    radial-gradient(ellipse 100px 220px at 40% 100%, rgba(20, 40, 20, 0.9) 0%, transparent 70%),
+    radial-gradient(ellipse 70px 190px at 55% 100%, rgba(25, 45, 25, 0.8) 0%, transparent 70%),
+    radial-gradient(ellipse 90px 210px at 70% 100%, rgba(20, 40, 20, 0.7) 0%, transparent 70%),
+    radial-gradient(ellipse 65px 185px at 85% 100%, rgba(25, 45, 25, 0.8) 0%, transparent 70%);
+  animation: forestSway 15s ease-in-out infinite;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      // Additional tree layers for depth
+      radial-gradient(ellipse 50px 150px at 15% 100%, rgba(30, 50, 30, 0.6) 0%, transparent 60%),
+      radial-gradient(ellipse 80px 200px at 35% 100%, rgba(25, 45, 25, 0.7) 0%, transparent 65%),
+      radial-gradient(ellipse 60px 170px at 65% 100%, rgba(30, 50, 30, 0.5) 0%, transparent 60%),
+      radial-gradient(ellipse 70px 180px at 80% 100%, rgba(25, 45, 25, 0.6) 0%, transparent 65%);
+    animation: forestSway 20s ease-in-out infinite reverse;
+  }
+}
+
+.forestLeaves {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    // Falling leaves pattern
+    radial-gradient(circle at 20% 10%, rgba(139, 115, 85, 0.1) 3px, transparent 3px),
+    radial-gradient(circle at 80% 20%, rgba(139, 115, 85, 0.08) 2px, transparent 2px),
+    radial-gradient(circle at 30% 30%, rgba(139, 115, 85, 0.12) 4px, transparent 4px),
+    radial-gradient(circle at 70% 40%, rgba(139, 115, 85, 0.06) 2.5px, transparent 2.5px),
+    radial-gradient(circle at 50% 15%, rgba(139, 115, 85, 0.1) 3.5px, transparent 3.5px),
+    radial-gradient(circle at 90% 35%, rgba(139, 115, 85, 0.08) 2px, transparent 2px);
+  background-size: 150px 150px, 120px 120px, 180px 180px, 100px 100px, 160px 160px, 140px 140px;
+  animation: fallingLeaves 30s linear infinite;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      // More leaf patterns
+      radial-gradient(circle at 10% 25%, rgba(139, 115, 85, 0.08) 2px, transparent 2px),
+      radial-gradient(circle at 85% 15%, rgba(139, 115, 85, 0.06) 3px, transparent 3px),
+      radial-gradient(circle at 40% 35%, rgba(139, 115, 85, 0.1) 2.5px, transparent 2.5px),
+      radial-gradient(circle at 75% 25%, rgba(139, 115, 85, 0.07) 2px, transparent 2px);
+    background-size: 130px 130px, 110px 110px, 170px 170px, 120px 120px;
+    animation: fallingLeaves 25s linear infinite reverse;
+  }
+}
+
+.forestMoss {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    // Moss and lichen patterns
+    radial-gradient(ellipse at 5% 80%, rgba(45, 85, 45, 0.15) 20px, transparent 20px),
+    radial-gradient(ellipse at 95% 85%, rgba(55, 95, 55, 0.12) 15px, transparent 15px),
+    radial-gradient(ellipse at 20% 90%, rgba(45, 85, 45, 0.18) 25px, transparent 25px),
+    radial-gradient(ellipse at 80% 88%, rgba(55, 95, 55, 0.14) 18px, transparent 18px),
+    radial-gradient(ellipse at 50% 95%, rgba(45, 85, 45, 0.16) 22px, transparent 22px);
+  animation: mossGrow 40s ease-in-out infinite;
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.tribalSymbols {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+  
+  .symbolLeft, .symbolRight {
+    font-size: 3rem;
+    animation: tribalSymbolFloat 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px rgba(139, 115, 85, 0.6));
+  }
+  
+  .symbolLeft {
+    animation-delay: 0s;
+  }
+  
+  .symbolRight {
+    animation-delay: 2s;
+  }
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.titleMain {
+  font-family: 'Griffy', cursive;
+  font-size: clamp(3.5rem, 9vw, 7rem);
+  font-weight: 400;
+  color: #d4af37;
+  letter-spacing: 0.1em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+  position: relative;
+}
+
+.titleSub {
+  font-family: 'Griffy', cursive;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 400;
+  color: #d4af37;
+  letter-spacing: 0.15em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  position: relative;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-family: 'Griffy', cursive;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-weight: 400;
+  color: #d4c4a8;
+  line-height: 1.6;
+  max-width: 700px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid #d4af37;
+  position: relative;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.cta {
+  margin-top: 20px;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 35px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background: #d4af37;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.3s ease;
+  border: 2px solid #d4af37;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 0 20px rgba(212, 175, 55, 0.5);
+  
+  .buttonText {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .buttonSymbol {
+    font-size: 18px;
+  }
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4), 0 0 30px rgba(212, 175, 55, 0.8);
+    background: #d4af37;
+    border-color: #d4af37;
+  }
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  z-index: 2;
+}
+
+.totemPole {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  
+  .totemRing {
+    font-size: 20px;
+    color: #8b7355;
+    opacity: 0.8;
+    
+    &:nth-child(1) {
+      opacity: 0.6;
+    }
+    
+    &:nth-child(2) {
+      opacity: 0.8;
+    }
+    
+    &:nth-child(3) {
+      opacity: 1;
+    }
+  }
+}
+
+.scrollText {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #8b7355;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+// Subtle natural animations only
+@keyframes forestWhisper {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-2px, -1px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes fireFlicker {
+  0% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes fireDance {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes spiritDrift {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(5px, -3px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.6;
+  }
+}
+
+@keyframes spiritGlow {
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes shamanRitual {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-1px, -1px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes danceCircle {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes oldSpiritsDrift {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translate(15px, -8px) rotate(2deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-10px, -15px) rotate(-1deg);
+    opacity: 0.7;
+  }
+  75% {
+    transform: translate(8px, -5px) rotate(1deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.6;
+  }
+}
+
+@keyframes oldSpiritsGlow {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.1) rotate(180deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+    opacity: 0.4;
+  }
+}
+
+@keyframes tribalPattern {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(-5px, -3px) rotate(1deg);
+  }
+  50% {
+    transform: translate(3px, -5px) rotate(-1deg);
+  }
+  75% {
+    transform: translate(-2px, 4px) rotate(0.5deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes sacredSymbols {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    opacity: 0.6;
+  }
+}
+
+@keyframes fallingLeaves {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(50vh) rotate(180deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0.4;
+  }
+}
+
+@keyframes mossGrow {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.6;
+  }
+  25% {
+    transform: scale(1.05) rotate(1deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1) rotate(0deg);
+    opacity: 0.7;
+  }
+  75% {
+    transform: scale(1.03) rotate(-1deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.6;
+  }
+}
+
+@keyframes tribalSymbolFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.8;
+  }
+  25% {
+    transform: translateY(-5px) rotate(5deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-3px) rotate(-3deg);
+    opacity: 0.9;
+  }
+  75% {
+    transform: translateY(-7px) rotate(3deg);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 0 15px;
+  }
+  
+  .container {
+    gap: 25px;
+  }
+  
+  .tribalSymbols {
+    max-width: 300px;
+    
+    .symbolLeft, .symbolRight {
+      font-size: 2.5rem;
+    }
+  }
+  
+  .ctaButton {
+    padding: 15px 35px;
+    font-size: 16px;
+    gap: 10px;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+    padding: 15px;
+  }
+}

@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Creepster&family=Griffy:wght@400&family=Butcherman&family=Nosifer&display=swap');
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(13, 26, 13, 1);
+  backdrop-filter: blur(10px);
+  border-bottom: 3px solid rgba(76, 175, 80, 0.4);
+  transition: all 0.3s ease;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      // Enhanced tribal dot patterns
+      radial-gradient(circle at 10% 20%, rgba(45, 95, 45, 0.2) 3px, transparent 3px),
+      radial-gradient(circle at 30% 40%, rgba(65, 115, 65, 0.15) 2px, transparent 2px),
+      radial-gradient(circle at 70% 60%, rgba(55, 105, 55, 0.18) 2.5px, transparent 2.5px),
+      radial-gradient(circle at 90% 80%, rgba(45, 85, 45, 0.12) 2px, transparent 2px),
+      // Ancient tribal symbols
+      radial-gradient(circle at 15% 60%, rgba(139, 115, 85, 0.1) 4px, transparent 4px),
+      radial-gradient(circle at 85% 30%, rgba(76, 175, 80, 0.08) 3px, transparent 3px),
+      radial-gradient(circle at 50% 10%, rgba(139, 115, 85, 0.12) 2px, transparent 2px),
+      radial-gradient(circle at 25% 85%, rgba(76, 175, 80, 0.06) 3.5px, transparent 3.5px);
+    background-size: 120px 120px, 100px 100px, 140px 140px, 80px 80px, 90px 90px, 110px 110px, 70px 70px, 130px 130px;
+    pointer-events: none;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      // Enhanced tribal line patterns
+      repeating-linear-gradient(
+        15deg,
+        transparent,
+        transparent 30px,
+        rgba(34, 102, 34, 0.08) 30px,
+        rgba(34, 102, 34, 0.08) 60px
+      ),
+      repeating-linear-gradient(
+        -15deg,
+        transparent,
+        transparent 40px,
+        rgba(68, 136, 68, 0.06) 40px,
+        rgba(68, 136, 68, 0.06) 80px
+      ),
+      // Sacred geometry overlays
+      repeating-conic-gradient(
+        from 0deg at 20% 20%,
+        transparent 0deg,
+        rgba(139, 115, 85, 0.03) 20deg,
+        transparent 40deg,
+        rgba(76, 175, 80, 0.02) 60deg,
+        transparent 80deg
+      ),
+      repeating-conic-gradient(
+        from 45deg at 80% 80%,
+        transparent 0deg,
+        rgba(76, 175, 80, 0.04) 15deg,
+        transparent 30deg,
+        rgba(139, 115, 85, 0.02) 45deg,
+        transparent 60deg
+      );
+    background-size: 200px 200px, 160px 160px, 150px 150px, 120px 120px;
+    pointer-events: none;
+  }
+  
+  &.scrolled {
+    background: rgba(13, 26, 13, 1);
+    box-shadow: 0 4px 25px rgba(76, 175, 80, 0.5);
+    border-bottom-color: rgba(76, 175, 80, 0.6);
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #00ff00;
+    z-index: 1001;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  
+  .logoText {
+    font-family: 'Griffy', cursive;
+    font-size: 24px;
+    font-weight: 400;
+    color: #d4af37;
+    line-height: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    text-transform: uppercase;
+  }
+  
+  .logoSubtext {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    color: #888;
+    letter-spacing: 2px;
+    margin-top: -2px;
+  }
+}
+
+.nav {
+  display: flex;
+  gap: 30px;
+}
+
+.audioContainer {
+  display: flex;
+  align-items: center;
+}
+
+.navLink {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #f3e5f5;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  
+  &::before {
+    content: '🗿';
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #4caf50;
+    opacity: 0;
+    transition: all 0.3s ease;
+    font-size: 16px;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: linear-gradient(45deg, #4caf50, #8bc34a);
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.6);
+    border-radius: 2px;
+  }
+  
+  &:hover {
+    color: #4caf50;
+    text-shadow: 0 0 15px rgba(76, 175, 80, 0.7);
+    
+    &::before {
+      opacity: 1;
+      left: -25px;
+      transform: translateY(-50%) scale(1.3) rotate(10deg);
+    }
+    
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+@keyframes shamanicGradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .logo .logoText {
+    font-size: 20px;
+  }
+  
+  .nav {
+    gap: 20px;
+  }
+  
+  .navLink {
+    font-size: 14px;
+  }
+}
+
+// Animation keyframes for tribal patterns
+@keyframes forestWhisper {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-2px, -1px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes forestDance {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(1px, 1px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+

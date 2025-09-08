@@ -1,0 +1,66 @@
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a0d1a 0%, #2d1a2d 50%, #1a0d2d 100%);
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(156, 39, 176, 0.25) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 152, 0, 0.25) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(63, 81, 181, 0.2) 0%, transparent 50%),
+      repeating-linear-gradient(
+        30deg,
+        transparent,
+        transparent 25px,
+        rgba(156, 39, 176, 0.04) 25px,
+        rgba(156, 39, 176, 0.04) 50px
+      ),
+      repeating-linear-gradient(
+        -30deg,
+        transparent,
+        transparent 35px,
+        rgba(255, 152, 0, 0.02) 35px,
+        rgba(255, 152, 0, 0.02) 70px
+      );
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  &::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(255, 152, 0, 0.08) 2px, transparent 2px),
+      radial-gradient(circle at 75% 75%, rgba(156, 39, 176, 0.08) 2px, transparent 2px),
+      radial-gradient(circle at 50% 50%, rgba(63, 81, 181, 0.05) 1px, transparent 1px);
+    background-size: 60px 60px, 40px 40px, 80px 80px;
+    pointer-events: none;
+    z-index: 0;
+    animation: shamanicPattern 25s linear infinite;
+  }
+  
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+
+@keyframes shamanicPattern {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(-8px, -8px) rotate(1deg); }
+  50% { transform: translate(8px, -4px) rotate(-1deg); }
+  75% { transform: translate(-4px, 8px) rotate(0.5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+

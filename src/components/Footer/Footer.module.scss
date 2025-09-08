@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Creepster&family=Griffy:wght@400&family=Butcherman&family=Nosifer&family=UnifrakturMaguntia&family=Germania+One&family=Creepy&family=Fredericka+the+Great&display=swap');
+
+.footer {
+  background: 
+    linear-gradient(180deg, #0a1a0a 0%, #1a2a1a 20%, #2d3a2d 40%, #1a2a1a 60%, #0a1a0a 100%),
+    radial-gradient(ellipse at 20% 80%, rgba(45, 85, 45, 0.6) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(65, 105, 65, 0.4) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(55, 95, 55, 0.3) 0%, transparent 70%);
+  border-top: 2px solid rgba(139, 115, 85, 0.4);
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 10% 20%, rgba(45, 95, 45, 0.2) 3px, transparent 3px),
+      radial-gradient(circle at 30% 40%, rgba(65, 115, 65, 0.15) 2px, transparent 2px),
+      radial-gradient(circle at 70% 60%, rgba(55, 105, 55, 0.18) 2.5px, transparent 2.5px),
+      radial-gradient(circle at 90% 80%, rgba(45, 85, 45, 0.12) 2px, transparent 2px);
+    background-size: 120px 120px, 100px 100px, 140px 140px, 80px 80px;
+    animation: forestWhisper 30s linear infinite;
+    pointer-events: none;
+  }
+  
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+.brand {
+  .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    position: relative;
+    
+    &::before {
+      content: '🔥';
+      position: absolute;
+      top: -10px;
+      left: -30px;
+      font-size: 1.5rem;
+      color: #d4af37;
+      animation: fireDance 4s ease-in-out infinite;
+    }
+    
+    &::after {
+      content: '🌿';
+      position: absolute;
+      top: -10px;
+      right: -30px;
+      font-size: 1.5rem;
+      color: #8b7355;
+      animation: forestSway 5s ease-in-out infinite;
+    }
+    
+    .logoText {
+      font-family: 'Griffy', cursive;
+      font-size: 28px;
+      font-weight: 400;
+      color: #d4af37;
+      line-height: 1;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      text-transform: uppercase;
+    }
+    
+    .logoSubtext {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 12px;
+      font-weight: 300;
+      color: #8b7355;
+      letter-spacing: 2px;
+      margin-top: -2px;
+    }
+  }
+  
+  .tagline {
+    font-family: 'Griffy', cursive;
+    font-size: 16px;
+    font-weight: 400;
+    color: #d4c4a8;
+    line-height: 1.5;
+    max-width: 300px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  }
+}
+
+.links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.linkGroup {
+  h4 {
+    font-family: 'Griffy', cursive;
+    font-size: 14px;
+    font-weight: 400;
+    color: #d4af37;
+    margin-bottom: 20px;
+    letter-spacing: 0.12em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    text-transform: uppercase;
+    position: relative;
+    
+    &::before {
+      content: '🏺';
+      position: absolute;
+      left: -25px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 16px;
+      color: #8b7355;
+      animation: ritualFloat 6s ease-in-out infinite;
+    }
+  }
+  
+  a {
+    display: block;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #d4c4a8;
+    text-decoration: none;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    
+    &::before {
+      content: '🌿';
+      position: absolute;
+      left: -30px;
+      opacity: 0;
+      transition: all 0.3s ease;
+      color: #8b7355;
+      font-size: 16px;
+    }
+    
+    &:hover {
+      color: #d4af37;
+      transform: translateX(12px);
+      text-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+      
+      &::before {
+        opacity: 1;
+        left: -25px;
+        transform: scale(1.4) rotate(20deg);
+      }
+    }
+  }
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-top: 1px solid rgba(139, 115, 85, 0.3);
+  margin-bottom: 10px;
+}
+
+.copyright {
+  p {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #8b7355;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.legal {
+  display: flex;
+  gap: 20px;
+  
+  a {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #8b7355;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    
+    &:hover {
+      color: #d4af37;
+    }
+  }
+}
+
+.tech {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 10px 0;
+  border-top: 1px solid rgba(139, 115, 85, 0.2);
+  position: relative;
+  
+  &::before {
+    content: '🔥🌿🏺';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    color: #8b7355;
+    animation: spiritDance 8s ease-in-out infinite;
+  }
+}
+
+.techItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  
+  .techLabel {
+    font-family: 'Germania One', cursive;
+    font-size: 10px;
+    font-weight: 400;
+    color: #8b7355;
+    letter-spacing: 0.12em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    text-transform: uppercase;
+  }
+  
+  .techValue {
+    font-family: 'Germania One', cursive;
+    font-size: 10px;
+    font-weight: 400;
+    color: #d4af37;
+    letter-spacing: 0.12em;
+    animation: spiritPulse 3s ease-in-out infinite;
+    text-shadow: 0 0 6px rgba(212, 175, 55, 0.4);
+    text-transform: uppercase;
+  }
+}
+
+// Animations for forest, fire, spirits, and shamans
+@keyframes forestWhisper {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-2px, -1px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes forestSway {
+  0%, 100% {
+    transform: rotate(0deg);
+    opacity: 0.8;
+  }
+  25% {
+    transform: rotate(5deg);
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(-3deg);
+    opacity: 0.9;
+  }
+  75% {
+    transform: rotate(3deg);
+    opacity: 1;
+  }
+}
+
+@keyframes fireDance {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.9;
+  }
+  25% {
+    transform: scale(1.2) rotate(5deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1) rotate(-3deg);
+    opacity: 0.8;
+  }
+  75% {
+    transform: scale(1.15) rotate(2deg);
+    opacity: 1;
+  }
+}
+
+@keyframes ritualFloat {
+  0%, 100% {
+    transform: translateY(-50%) rotate(0deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-50%) rotate(5deg) translateY(-2px);
+    opacity: 1;
+  }
+}
+
+@keyframes spiritDance {
+  0%, 100% {
+    transform: translateX(-50%) rotate(0deg);
+    opacity: 0.8;
+  }
+  25% {
+    transform: translateX(-50%) rotate(5deg) scale(1.1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-50%) rotate(-3deg) scale(1.05);
+    opacity: 0.9;
+  }
+  75% {
+    transform: translateX(-50%) rotate(2deg) scale(1.08);
+    opacity: 1;
+  }
+}
+
+@keyframes spiritPulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 40px 15px 15px;
+  }
+  
+  .content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 30px;
+  }
+  
+  .links {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .bottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  .legal {
+    justify-content: center;
+  }
+  
+  .tech {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    padding: 8px 0;
+  }
+  
+  .brand .logo {
+    &::before, &::after {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .brand .logo .logoText {
+    font-size: 24px;
+  }
+  
+  .tech {
+    gap: 10px;
+  }
+  
+  .techItem {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
