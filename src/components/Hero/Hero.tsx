@@ -1,9 +1,11 @@
 import React from 'react';
 import styles from './Hero.module.scss';
+import FlowingWallets from '../FlowingWallets/FlowingWallets';
 
 const Hero: React.FC = () => {
   return (
     <section className={styles.hero}>
+      <FlowingWallets />
       <div className={styles.tribalBackground}>
         <div className={styles.forestLayer}></div>
         <div className={styles.fireLayer}></div>

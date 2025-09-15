@@ -1,9 +1,11 @@
 import React from 'react';
 import styles from './Footer.module.scss';
+import FlowingWallets from '../FlowingWallets/FlowingWallets';
 
 const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
+      <FlowingWallets />
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.brand}>

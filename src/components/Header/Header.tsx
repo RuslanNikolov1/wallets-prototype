@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Header.module.scss';
 import AudioPlayer from '../AudioPlayer/AudioPlayer';
+import FlowingWallets from '../FlowingWallets/FlowingWallets';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,6 +17,7 @@ const Header: React.FC = () => {
 
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
+      <FlowingWallets />
       <div className={styles.container}>
         <div className={styles.logo}>
           <span className={styles.logoText}>ANCIENT</span>

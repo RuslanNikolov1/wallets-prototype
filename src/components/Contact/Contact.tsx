@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Contact.module.scss';
+import FlowingWallets from '../FlowingWallets/FlowingWallets';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -23,6 +24,7 @@ const Contact: React.FC = () => {
 
   return (
     <section id="contact" className={styles.contact}>
+      <FlowingWallets />
       <div className={styles.container}>
         <div className={styles.header}>
           <h2 className={styles.title}>JOIN THE TRIBE</h2>
