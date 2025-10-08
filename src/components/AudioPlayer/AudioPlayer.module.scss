@@ -54,3 +54,21 @@
   }
 }
 
+@media (max-width: 768px) {
+  .audioControls {
+    gap: 8px;
+  }
+  
+  .musicLabel {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+  
+  .playPauseButton {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    border-width: 1px;
+  }
+}
+
