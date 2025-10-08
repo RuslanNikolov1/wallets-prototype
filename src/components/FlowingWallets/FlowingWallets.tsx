@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './FlowingWallets.module.scss';
+import walletImage from '../../assets/images/my-wallet.png';
 
 const FlowingWallets: React.FC = () => {
   // Generate random wallet icons for flowing animation
@@ -9,8 +10,8 @@ const FlowingWallets: React.FC = () => {
     for (let i = 0; i < 30; i++) {
       randomWallets.push({
         id: `random-${i}`,
-        image: '/my-wallet.png',
-        delay: Math.random() * 60, // Random delay up to 60 seconds
+        image: walletImage,
+        delay: Math.random() * 3, // Random delay up to 3 seconds
         size: 30, // Fixed size for all wallets
         startX: Math.random() * 100, // Random starting X position
         startY: Math.random() * 100, // Random starting Y position

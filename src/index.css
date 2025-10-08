@@ -6,11 +6,17 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Rajdhani', sans-serif;
   background: #1a0d1a;
   color: #f3e5f5;
-  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 html {
