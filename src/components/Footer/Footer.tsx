@@ -35,9 +35,9 @@ const Footer: React.FC = () => {
             
             <div className={styles.linkGroup}>
               <h4>SPIRITS</h4>
-              <a href="#" target="_blank" rel="noopener noreferrer">Forest Whispers</a>
-              <a href="#" target="_blank" rel="noopener noreferrer">Fire Ceremonies</a>
-              <a href="#" target="_blank" rel="noopener noreferrer">Moon Gatherings</a>
+              <a href="https://example.com/forest-whispers" target="_blank" rel="noopener noreferrer">Forest Whispers</a>
+              <a href="https://example.com/fire-ceremonies" target="_blank" rel="noopener noreferrer">Fire Ceremonies</a>
+              <a href="https://example.com/moon-gatherings" target="_blank" rel="noopener noreferrer">Moon Gatherings</a>
             </div>
           </div>
         </div>
@@ -49,9 +49,9 @@ const Footer: React.FC = () => {
           </div>
           
           <div className={styles.legal}>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Cookie Policy</a>
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/terms-of-service">Terms of Service</a>
+            <a href="/cookie-policy">Cookie Policy</a>
           </div>
         </div>
         
